@@ -6,11 +6,6 @@ export DIR="$(dirname "$(pwd)")"
 export PYTHONPATH=${PYTHONPATH}:${DIR}
 
 
-
-
-
-
-
 # ==================================
 # = Varibles from training session =
 # ==================================
@@ -63,6 +58,7 @@ export folder_path='../.././outputs/prediction/pfam/S1A'
 export samples_output_path='../.././outputs/prediction/pfam/S1A/S1A_sample_sequences.csv'
 export weights_path=${model_output_path}
 
+export learning_option='unsupervised' # otherwise generate_sampled calls CM specific training
 
 
 python ../../generate_samples.py \
@@ -94,22 +90,4 @@ python ../../generate_samples.py \
 		--alpha_weight ${alpha_weight} \
 		--lambda_weight ${lambda_weight} \
 		--lr ${lr} \
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
+		--learning_option ${learning_option} \

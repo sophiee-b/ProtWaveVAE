@@ -57,6 +57,7 @@ export folder_path='../.././outputs/prediction/pfam/lactamase'
 export samples_output_path='../.././outputs/prediction/pfam/lactamase/lactamase_sample_sequences.csv'
 export weights_path=${model_output_path}
 
+export learning_option='unsupervised' # otherwise generate_sampled calls CM specific training
 
 
 python ../../generate_samples.py \
@@ -88,22 +89,4 @@ python ../../generate_samples.py \
 		--alpha_weight ${alpha_weight} \
 		--lambda_weight ${lambda_weight} \
 		--lr ${lr} \
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
+		--learning_option ${learning_option} \
